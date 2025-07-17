@@ -3,7 +3,7 @@ import cron from 'node-cron';
 // import jobQueue from "../queue/jobQueue.js";
 import jobQueue from '../queue/jobQueue.js';
 
-cron.schedule('*/30 * * * * *', async () => {
+cron.schedule('0 * * * *', async () => {
   console.log(
     'Scheduling background import job at',
     new Date().toLocaleTimeString()
@@ -13,3 +13,4 @@ cron.schedule('*/30 * * * * *', async () => {
     { attempts: 3, backoff: 5000 }
   );
 });
+
